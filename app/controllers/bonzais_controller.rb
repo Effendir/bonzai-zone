@@ -8,7 +8,7 @@ class BonzaisController < ApplicationController
   end
 
   def new
-    
+   
   end
 
   def create
