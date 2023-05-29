@@ -1,2 +1,51 @@
-<h1>Bonzais#index</h1>
-<p>Find me in app/views/bonzais/index.html.erb</p>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>All our Bonzais</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <% if @query %>
+        <p>You searched for <strong><%= @query %></strong>. We found <%= @bonzais.count %> bonzais out of our <%= @bonzais.count %> on our website.</p>
+      <% else %>
+        <p>All <%= @bonzais.count %> bonzais.</p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @bonzais.each do |bonzai| %>
+      <div class="col-md-4">
+        <div class="bonzai-card">
+          <div class="bonzai-card-image" style="background-image: url('<%= bonzai.picture_url %>')"></div>
+          <div class="bonzai-card-content">
+            <div class="bonzai-card-title">
+              <h4><%= bonzai.name %></h4>
+            </div>
+            <p><%= bonzai.address %></p>
+            <div class="flex">
+              <div class="flex align-items-center">
+                <i class="fa-solid fa-people-line"></i>
+                <span><%= bonzai.species %></span>
+              </div>
+              <div class="flex align-items-center ms-3">
+                <i class="fa-solid fa-euro-sign"></i>
+                <span><%= bonzai.price_per_day %></span>
+              </div>
+            </div>
+          </div>
+          <div class="bonzai-card-actions">
+            <%= link_to "More info", bonzai_path(bonzai) %>
+            <%= link_to "Edit", edit_bonzai_path(bonzai), class: "ms-3 text-warning" %>
+            <%= link_to "Remove", bonzai_path(bonzai),
+                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                class: "ms-3 text-danger"
+            %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
