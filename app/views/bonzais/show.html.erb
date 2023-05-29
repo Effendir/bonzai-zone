@@ -1,10 +1,9 @@
-<div class="map" style="background-image: url('<%= @bonzai.picture_url %>')"></div>
-
 <div class="container margin-top-negative">
   <div class="row">
     <div class="col-8">
       <div class="bonzai-show-card">
         <h1><%= @bonzai.name %></h1>
+        <%= image_tag @bonzai.photo_url, size:"350x350", class: "img-fluid" %>
         <p class="bonzai-show-address"><%= @bonzai.address %></p>
       </div>
       <div class="bonzai-show-card">
@@ -16,7 +15,7 @@
 
     <div class="col-4">
       <div class="bonzai-show-card">
-        <h5>Book this place!</h5>
+        <h5>Book this bonzai!</h5>
 
         <form action="">
           <div class="input-group">
@@ -34,10 +33,10 @@
         <h3>Details</h3>
         <div class="flex">
           <div class="flex">
-            <%= @bonzai.number_of_guests %> people
+            <%= @bonzai.species %>
           </div>
           <div class="flex ms-3">
-            <%= @bonzai.price_per_night %>€
+            <%= @bonzai.price_per_day %>€
           </div>
         </div>
       </div>
