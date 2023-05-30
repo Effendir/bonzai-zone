@@ -15,8 +15,9 @@ class BonzaisController < ApplicationController
 
   def create
     @bonzai = Bonzai.new(bonzai_params)
+    @bonzai.user = current_user
     if @bonzai.save
-      redirect_to bonzais_path(@bonzai)
+      redirect_to bonzais_path
     else
       render :new, status: :unprocessable_entity
     end
