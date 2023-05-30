@@ -6,6 +6,7 @@ class BonzaisController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @bonzai =  Bonzai.find(params[:id])
   end
 
