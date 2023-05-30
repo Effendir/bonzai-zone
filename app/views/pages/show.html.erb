@@ -1,0 +1,10 @@
+<% @bookings.each do |booking| %>
+<%= booking.bonzai.name %>
+<% end %>
+
+
+<div class="d-flex">
+ <% @bookings.each do |booking| %>
+      <h2 class="mx-2 my-2"><strong><%= booking.bonzai.name %></strong></h2>
+  <% end %>
+</div>
