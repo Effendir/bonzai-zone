@@ -41,9 +41,9 @@ export default class extends Controller {
       // retrieve the difference between the two dates in milliseconds
       const diffTime = (Date.parse(endDate) - Date.parse(startDate))
       // Turn milliseconds to days
-      var days = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+      let days = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
     } else {
-      var days = 0
+      let days = 0
     }
     // Add 1 day by default
     return days + 1
