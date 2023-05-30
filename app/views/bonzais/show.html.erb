@@ -20,7 +20,7 @@
         <%= simple_form_for [@bonzai, @booking]  do |f| %>
           <%= f.input :start_date %>
           <%= f.input :end_date %>
-          <%= f.hidden_field :total_price, value: price  %>
+          <%= f.hidden_field :total_price %>
           <%= f.submit class: "btn btn-primary" %>
         <% end %>
 
