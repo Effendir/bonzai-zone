@@ -3,7 +3,7 @@
     <div class="col-8">
       <div class="bonzai-show-card">
         <h1><%= @bonzai.name %></h1>
-        <%= image_tag @bonzai.photo_url, size:"350x350", class: "img-fluid" %>
+        <%= cl_image_tag @bonzai.photo.key, height: 300, width: 400, crop: :fill %>
         <p class="bonzai-show-address"><%= @bonzai.address %></p>
       </div>
       <div class="bonzai-show-card">
