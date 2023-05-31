@@ -38,7 +38,7 @@ class BonzaisController < ApplicationController
 
   def destroy
     @bonzai.destroy
-    redirect_to bonzais_path, status: :see_other
+    redirect_to profile_path, status: :see_other
   end
 
   private

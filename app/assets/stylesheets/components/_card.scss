@@ -1,0 +1,24 @@
+.bonzai-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.bonzai-card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.bonzai-card p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.bonzai-card-image {
+  width: 150px;
+  height: 150px;
+  background-position: center;
+  background-size: cover;
+}
