@@ -1,8 +1,9 @@
 <div class="container mt-3">
   <div class="row">
     <div class="col-12">
-      <h1>All our Bonzais</h1>
+      <h1>Bonzai Zone</h1>
     </div>
+    <h2>Adopt a bonzai for a day or more!</h2>
   </div>
 
   <div class="row">
@@ -31,17 +32,17 @@
               </div>
               <div class="flex align-items-center ms-3">
                 <i class="fa-solid fa-euro-sign"></i>
-                <span><%= bonzai.price_per_day %></span>
+                <span><%= bonzai.price_per_day %> per day</span>
               </div>
             </div>
           </div>
           <div class="bonzai-card-actions">
-            <%= link_to "More info", bonzai_path(bonzai) %>
-            <%= link_to "Edit", edit_bonzai_path(bonzai), class: "ms-3 text-warning" %>
-            <%= link_to "Remove", bonzai_path(bonzai),
-                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                class: "ms-3 text-danger"
-            %>
+            <%= link_to "Book!", bonzai_path(bonzai) %>
+            <%# <%= link_to "Edit", edit_bonzai_path(bonzai), class: "ms-3 text-warning" %>
+            <%# <%= link_to "Remove", bonzai_path(bonzai), %>
+                <%# data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, %>
+                <%# class: "ms-3 text-danger" %>
+            <%# %>
           </div>
         </div>
       </div>
