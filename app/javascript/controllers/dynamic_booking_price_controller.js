@@ -37,13 +37,14 @@ export default class extends Controller {
   #diffInDays(startDate, endDate) {
     // Calculate the difference between the two dates only if they both
     // are defined (they are undefined if an input has no value)
+    let days
     if (startDate && endDate) {
       // retrieve the difference between the two dates in milliseconds
       const diffTime = (Date.parse(endDate) - Date.parse(startDate))
       // Turn milliseconds to days
-      let days = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+      days = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
     } else {
-      let days = 0
+      days = 0
     }
     // Add 1 day by default
     return days + 1
