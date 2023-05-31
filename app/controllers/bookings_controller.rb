@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bonzais_path(@bonzai)
     else
-      render :new, status: :unprocessable_entity
+      render 'bonzais/show', status: :unprocessable_entity
     end
   end
 

@@ -47,6 +47,7 @@ class BonzaisController < ApplicationController
   end
 
   def bonzai_params
-    params.require(:bonzai).permit(:name, :species, :photo_url, :description, :address, :price_per_day)
+    #params.require(:bonzai).permit(:name, :species, :photo_url, :description, :address, :price_per_day)
+    params.require(:bonzai).permit(:name, :species, :photo, :description, :address, :price_per_day)
   end
 end

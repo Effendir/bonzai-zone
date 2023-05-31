@@ -3,7 +3,7 @@
     <div class="col-8">
       <div class="bonzai-show-card">
         <h1><%= @bonzai.name %></h1>
-        <%= image_tag @bonzai.photo_url, size:"350x350", class: "img-fluid" %>
+        <%= cl_image_tag @bonzai.photo.key, height: 300, width: 400, crop: :fill %>
         <p class="bonzai-show-address"><%= @bonzai.address %></p>
       </div>
       <div class="bonzai-show-card">
@@ -17,12 +17,37 @@
       <div class="bonzai-show-card">
         <h5>Book this bonzai!</h5>
 
-        <%= simple_form_for [@bonzai, @booking]  do |f| %>
-          <%= f.input :start_date %>
-          <%= f.input :end_date %>
-          <%= f.hidden_field :total_price %>
-          <%= f.submit class: "btn btn-primary" %>
-        <% end %>
+<div data-controller="dynamic-booking-price"
+     data-dynamic-booking-price-price-value="<%= @bonzai.price_per_day %>">
+  <%= simple_form_for [@bonzai, @booking] do |f| %>
+    <%= f.input :start_date, as: :string,
+                input_html: {
+                  data: {
+                    controller: "datepicker",
+                    flatpickr_target: 'startDateInput',
+                    dynamic_booking_price_target: 'startDateInput',
+                    action: 'change->dynamic-booking-price#updatePrice'
+                  }
+                } %>
+    <%= f.input :end_date, as: :string,
+                input_html: {
+                  data: {
+                    controller: "datepicker" ,
+                    flatpickr_target: 'endDateInput',
+                    dynamic_booking_price_target: 'endDateInput',
+                    action: 'change->dynamic-booking-price#updatePrice'
+                  }
+                } %>
+
+    <%= f.input :total_price,
+      input_html: { data: { dynamic_booking_price_target: 'totalPrice'}},
+      wrapper_html: { class: 'd-none' } %>
+    <%= f.submit 'Book now!', class: 'btn btn-primary' %>
+  <% end %>
+   <p>
+    Total price: <span data-dynamic-booking-price-target="priceHolder"><%= @bonzai.price_per_day %></span> €
+  </p>
+</div>
 
       </div>
       <div class="bonzai-show-card">

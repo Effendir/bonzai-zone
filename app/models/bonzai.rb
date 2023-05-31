@@ -1,6 +1,7 @@
 class Bonzai < ApplicationRecord
   belongs_to :user
   has_many :bookings
+  has_one_attached :photo
   validates :name, presence: true
   validates :species, presence: true
   validates :address, presence: true
