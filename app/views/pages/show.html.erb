@@ -1,10 +1,27 @@
-<% @bookings.each do |booking| %>
-<%= booking.bonzai.name %>
-<% end %>
-
-
-<div class="d-flex">
- <% @bookings.each do |booking| %>
-      <h2 class="mx-2 my-2"><strong><%= booking.bonzai.name %></strong></h2>
+<h2>Bonzais owned</h2>
+<ul>
+  <% @user_bonzais.each do |bonzai| %>
+  <li><%= bonzai.name %></li>
+      <%= link_to "Edit", edit_bonzai_path(bonzai), class: "ms-3 text-warning" %>
+      <%= link_to "Remove", bonzai_path(bonzai),
+        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+        class: "ms-3 text-danger"
+      %>
   <% end %>
-</div>
+</ul>
+
+<h2>Bonzais booked</h2>
+<ul>
+  <% @user_bookings.each do |booking| %>
+  <li><%= booking.bonzai.name %> - <%= booking.status %> - <%= booking.start_date %> to <%= booking.end_date %></li>
+  <% end %>
+</ul>
+
+<h2>Manage booking requests</h2>
+<ul>
+  <% @requests.each do |r| %>
+  <li><%= r.bonzai.name %> - <%= r.status %> - <%= r.start_date %> to <%= r.end_date %></li>
+  <%= link_to "Accept", booking_accept_path(r), class: "text-success", data: { turbo_method: 'PATCH'} %>
+  <%= link_to "Decline", booking_decline_path(r), class: "text-danger", data: { turbo_method: 'PATCH'} %>
+  <% end %>
+</ul>
