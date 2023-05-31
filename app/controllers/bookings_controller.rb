@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @bonzai = Bonzai.find(params[:bonzai_id])
     @booking.bonzai = @bonzai
     if @booking.save
-      redirect_to bonzais_path(@bonzai)
+      redirect_to bonzais_path
     else
       render 'bonzais/show', status: :unprocessable_entity
     end
