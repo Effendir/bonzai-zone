@@ -21,12 +21,14 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = "Accepted"
     @booking.save
+    redirect_to profile_path, status: :see_other
   end
 
   def decline
     @booking = Booking.find(params[:id])
     @booking.status = "Declined"
     @booking.save
+    redirect_to profile_path, status: :see_other
   end
 
   private
