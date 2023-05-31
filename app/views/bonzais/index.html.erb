@@ -31,13 +31,24 @@
               <h4><%= bonzai.name %></h4>
             </div>
             <p><%= bonzai.address %></p>
+
           <div>
             <%= link_to "Book!", bonzai_path(bonzai), class: "btn btn-green" %>
-            <%# <%= link_to "Edit", edit_bonzai_path(bonzai), class: "ms-3 text-warning" %>
-            <%# <%= link_to "Remove", bonzai_path(bonzai), %>
-                <%# data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, %>
-                <%# class: "ms-3 text-danger" %>
-            <%# %>
+          
+
+            <div class="flex">
+              <div class="flex align-items-center">
+                <span><%= bonzai.species %></span>
+              </div>
+              <div class="flex align-items-center ms-3">
+                <i class="fa-solid fa-euro-sign"></i>
+                <span><%= bonzai.price_per_day %> per day</span>
+              </div>
+            </div>
+          </div>
+          <div class="bonzai-card-actions">
+            <%= link_to "More info", bonzai_path(bonzai) %>
+
           </div>
             <div class="flex">
               <%# <div class="flex align-items-center"> %>
