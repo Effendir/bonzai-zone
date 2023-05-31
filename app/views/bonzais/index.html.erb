@@ -23,7 +23,6 @@
           <div class="flex align-items-center ms-3">
             <div class="bonzai-card-image" style="background-image: url('<%= cl_image_path bonzai.photo.key %>')">
             </div>
-             <span><%= bonzai.price_per_day %> per day</span>
           </div>
 
           <div class="bonzai-card-content" class="flex">
@@ -34,7 +33,7 @@
 
           <div>
             <%= link_to "Book!", bonzai_path(bonzai), class: "btn btn-green" %>
-          
+
 
             <div class="flex">
               <div class="flex align-items-center">
@@ -47,7 +46,6 @@
             </div>
           </div>
           <div class="bonzai-card-actions">
-            <%= link_to "More info", bonzai_path(bonzai) %>
 
           </div>
             <div class="flex">
