@@ -1,5 +1,8 @@
 class PagesController < ApplicationController
 
+  def home
+  end
+
   def show
     @user = current_user
     @user_bonzais = Bonzai.where(user_id: @user.id)
