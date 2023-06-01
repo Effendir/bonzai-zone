@@ -1,2 +1,20 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h3 class="text-center py-4 my-4">Bienvenue sur Bonzai-zone, site de location de bonzais</h3>
+
+<div class="d-flex justify-content-evenly">
+
+  <div class="col-md-4">
+      <div class="home-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1677897466760-ba23e614aa7f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80)">
+        <div class="home-card-btn">
+          <%= link_to "Réservez votre Bonzai!", bonzais_path, class: "btn btn-light" %>
+        </div>
+      </div>
+  </div>
+
+  <div class="col-md-4">
+      <div class="home-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1549556172-b850cbe27974?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80)">
+        <div class="home-card-btn">
+          <%= link_to "Proposez votre bonzai!", new_bonzai_path, class: "btn btn-light" %>
+        </div>
+      </div>
+  </div>
+</div>

@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @booking.status = 'pending'
+    @booking.status = 'En attente'
     @bonzai = Bonzai.find(params[:bonzai_id])
     @booking.bonzai = @bonzai
     if @booking.save
@@ -19,14 +19,14 @@ class BookingsController < ApplicationController
 
   def accept
     @booking = Booking.find(params[:id])
-    @booking.status = "Accepted"
+    @booking.status = "Accepté"
     @booking.save
     redirect_to profile_path, status: :see_other
   end
 
   def decline
     @booking = Booking.find(params[:id])
-    @booking.status = "Declined"
+    @booking.status = "Refusé"
     @booking.save
     redirect_to profile_path, status: :see_other
   end
