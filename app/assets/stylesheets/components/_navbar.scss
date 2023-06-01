@@ -1,6 +1,12 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $lightpink;
+}
+
+.navbar-lewagon h1 {
+  justify-content: space-between;
+  color: $green;
+  font-weight: bold;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +15,13 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.link {
+  color: $darkpink;
+  font-weight: bold;
+}
+
+.link:hover {
+  color: $pink;
 }
