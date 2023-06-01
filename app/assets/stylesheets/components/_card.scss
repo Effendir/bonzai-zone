@@ -7,7 +7,7 @@
 .bonzai-card {
   display: flex;
   overflow: hidden;
-  background: #EFD9D1;
+  background: $pink;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
 }
@@ -26,16 +26,9 @@
   display: grid;
   grid-template-columns: 1fr;
   h3, h5 {
-    color: #007C35;
-  };
-  h3 {
-    font-weight: bold;
-    font-size: 36px;
+    color: $green;
   }
-  h5 {
-    font-size: 18px;
-  }
-}
+ }
 
 .bonzai-card-image {
   width: 55%;
@@ -45,7 +38,6 @@
 }
 
 .bonzai-card p {
-  font-size: 12px;
   opacity: .7;
   margin: 0;
 }
@@ -58,8 +50,6 @@
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 24px;
-  font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -97,17 +87,11 @@
 }
 
 .card-dashboard h2 {
-  font-size: 32px;
   margin: 0;
   text-align: center;
 }
 
-.card-dashboard h3 {
-  font-size: 20px;
-}
-
 .card-dashboard p {
-  font-size: 12px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
