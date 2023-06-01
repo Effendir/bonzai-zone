@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'bookings/new'
-  root to: "bonzais#index"
+  root to: "bonzais#home"
   resources :bonzais do
     resources :bookings
   end

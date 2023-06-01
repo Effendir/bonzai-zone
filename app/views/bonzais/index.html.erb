@@ -21,37 +21,34 @@
       <div class="col-md-4">
         <div class="bonzai-card">
           <div class="flex align-items-center ms-3">
+
             <div class="bonzai-card-image" style="background-image: url('<%= cl_image_path bonzai.photo.key %>')">
             </div>
+
           </div>
 
           <div class="bonzai-card-content" class="flex">
+
             <div class="bonzai-card-title">
               <h4><%= bonzai.name %></h4>
             </div>
+
             <p><%= bonzai.address %></p>
 
-          <div>
-            <%= link_to "Book!", bonzai_path(bonzai), class: "btn btn-green" %>
+            <div>
+              <%= link_to "Book!", bonzai_path(bonzai), class: "btn btn-green" %>
+              <div class="flex">
 
+                <div class="flex align-items-center">
+                  <span><%= bonzai.species %></span>
+                </div>
 
-            <div class="flex">
-              <div class="flex align-items-center">
-                <span><%= bonzai.species %></span>
+                <div class="flex align-items-center ms-3">
+                  <i class="fa-solid fa-euro-sign"></i>
+                  <span><%= bonzai.price_per_day %> per day</span>
+                </div>
+
               </div>
-              <div class="flex align-items-center ms-3">
-                <i class="fa-solid fa-euro-sign"></i>
-                <span><%= bonzai.price_per_day %> per day</span>
-              </div>
-            </div>
-          </div>
-          <div class="bonzai-card-actions">
-
-          </div>
-            <div class="flex">
-              <%# <div class="flex align-items-center"> %>
-                <%# <span><%= bonzai.species</span> %>
-              <%# </div> %>
             </div>
           </div>
         </div>
