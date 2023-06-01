@@ -1,1 +1,19 @@
 // Specific CSS for your home-page
+.banner-home {
+
+  filter: grayscale(30%);
+  filter: saturate(55%);
+  text-align: center;
+  height: 400px;
+  width: auto; 
+  font-size: 80px;
+  color: #FFC4DD;
+  font-weight: bold;
+  text-align: center ;
+  background-size: cover;
+  font-family: Montserrat;
+  opacity: 100px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.10);
+}
