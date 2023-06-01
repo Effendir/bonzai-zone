@@ -1,16 +1,16 @@
 .btn-green {
-  color: #EFD9D1;
+  color: $pink;
   padding: 4px 13px;
   border-radius: 40px;
-  background: #007C35;
+  background: $green;
   transition: background 0.3s ease;
   text-decoration: none;
 }
 
 .btn-green:hover {
-  color: #007C35;
-  border: 1px solid #007C35;
-  background: #EFD9D1;
+  color: $green;
+  border: 1px solid $green;
+  background: $pink;
 }
 
 .btn-dark-green {
@@ -21,7 +21,7 @@
   padding: 10px 39px;
   font-weight: bold;
   border-radius: 40px;
-  background: #999B84;
+  background: $green;
   transition: background 0.3s ease;
   text-decoration: none;
 
@@ -68,10 +68,10 @@
   font-size: 12px;
   padding: 1px 10px;
   border-radius: 40px;
-  border: solid 1px #007C35;
+  border: solid 1px $green;
   transition: background 0.3s ease;
   text-decoration: none;
-  color: #007C35;
+  color: $green;
 
   &:hover {
     color: white;
@@ -79,7 +79,7 @@
     font-size: 12px;
     padding: 1px 10px;
     border-radius: 40px;
-    background: #007C35;
+    background: $green;
     transition: background 0.3s ease;
     text-decoration: none;
   }
@@ -115,7 +115,7 @@
   width: 10;
   padding: 10px 17px;
   border-radius: 50%;
-  background: #EFD9D1;
+  background: $pink;
   transition: background 0.3s ease;
   text-decoration: none;
 
@@ -126,7 +126,7 @@
     width: 10;
     padding: 10px 17px;
     border-radius: 50%;
-    background: #D8AC9C;;
+    background: $darkpink;;
     transition: background 0.3s ease;
     text-decoration: none;
   }
@@ -136,7 +136,7 @@
   color: #575656;
   padding: 10px 17px;
   border-radius: 40px;
-  background: #EFD9D1;
+  background: $pink;
   transition: background 0.3s ease;
   text-decoration: none;
   font-size: 12px;
@@ -148,7 +148,7 @@
     width: 10;
     padding: 10px 17px;
     border-radius: 40px;
-    background: #D8AC9C;;
+    background: $darkpink;;
     transition: background 0.3s ease;
     text-decoration: none;
   }
@@ -161,7 +161,7 @@
   padding: 10px 20px;
   font-weight: bold;
   border-radius: 40px;
-  background: #999B84;
+  background: $pink;
   transition: background 0.3s ease;
   text-decoration: none;
 
