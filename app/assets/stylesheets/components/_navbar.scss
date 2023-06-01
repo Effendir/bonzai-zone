@@ -1,11 +1,11 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #ffffff;
+  background: $lightpink;
 }
 
 .navbar-lewagon h1 {
   justify-content: space-between;
-  color: #007C35;
+  color: $green;
   font-weight: bold;
 }
 
@@ -18,10 +18,10 @@
 }
 
 .link {
-  color: #D8AC9C;
+  color: $darkpink;
   font-weight: bold;
 }
 
 .link:hover {
-  color: #EFD9D1;
+  color: $pink;
 }
