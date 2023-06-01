@@ -21,9 +21,22 @@
   padding: 10px 39px;
   font-weight: bold;
   border-radius: 40px;
-  background: #007C35;
+  background: #999B84;
   transition: background 0.3s ease;
   text-decoration: none;
+
+  &:hover {
+  color: white;
+  margin: auto;
+  margin-top: 10px;
+  width: 70%;
+  padding: 10px 39px;
+  font-weight: bold;
+  border-radius: 40px;
+  background: #c2c4a8;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  }
 }
 
 .btn-orange {
@@ -50,7 +63,6 @@
 }
 
 .btn-green-dashboard {
-
   color: white;
   width: 29%;
   font-size: 12px;
@@ -143,15 +155,24 @@
 
 }
 
-.btn-dark-green:hover {
-  color: #414141;
+.btn-dark-green-form {
+  color: white;
   margin: auto;
-  margin-top: 10px;
-  width: 70%;
-  padding: 10px 39px;
+  padding: 10px 20px;
   font-weight: bold;
   border-radius: 40px;
-  background: #EFD9D1;
+  background: #999B84;
   transition: background 0.3s ease;
   text-decoration: none;
+
+  &:hover {
+  color: white;
+  margin: auto;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 40px;
+  background: #c2c4a8;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  }
 }
