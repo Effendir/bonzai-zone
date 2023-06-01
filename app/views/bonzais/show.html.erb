@@ -1,77 +1,56 @@
-<div class="container margin-top-negative">
+<div class="card-container justify-content">
   <div class="row">
-    <div class="col-8">
-      <div class="bonzai-show-card">
-        <h1><%= @bonzai.name %></h1>
-        <%= cl_image_tag @bonzai.photo.key, height: 300, width: 400, crop: :fill %>
-        <p class="bonzai-show-address"><%= @bonzai.address %></p>
-      </div>
-      <div class="bonzai-show-card">
-        <h3>A bit more about this bonzai...</h3>
-        <p><%= @bonzai.description %></p>
-        <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=<%= @bonzai.address %>&zoom=13&scale=2&size=1000x1000&maptype=roadmap&markers=color:red%7C<%= @bonzai.address %>&key=AIzaSyAPpx0wk4d-AQ8bhe8-a-ihC7NXLoPElhg')"></div>
-      </div>
+    <div class="col-6">
+      <h1><%= @bonzai.name %></h1>
+      <h3><%= @bonzai.species %></h3>
+      <h5><%= @bonzai.price_per_day %>€/jour</h5>
     </div>
-
-    <div class="col-4">
-      <div class="bonzai-show-card">
-        <h5>Book this bonzai!</h5>
-
-<div data-controller="dynamic-booking-price"
-     data-dynamic-booking-price-price-value="<%= @bonzai.price_per_day %>">
-  <%= simple_form_for [@bonzai, @booking] do |f| %>
-    <%= f.input :start_date, as: :string,
-                input_html: {
-                  data: {
-                    controller: "datepicker",
-                    flatpickr_target: 'startDateInput',
-                    dynamic_booking_price_target: 'startDateInput',
-                    action: 'change->dynamic-booking-price#updatePrice'
-                  }
-                } %>
-    <%= f.input :end_date, as: :string,
-                input_html: {
-                  data: {
-                    controller: "datepicker" ,
-                    flatpickr_target: 'endDateInput',
-                    dynamic_booking_price_target: 'endDateInput',
-                    action: 'change->dynamic-booking-price#updatePrice'
-                  }
-                } %>
-
-    <%= f.input :total_price,
-      input_html: { data: { dynamic_booking_price_target: 'totalPrice'}},
-      wrapper_html: { class: 'd-none' } %>
-    <%= f.submit 'Book now!', class: 'btn btn-primary' %>
-  <% end %>
-   <p>
-    Total price: <span data-dynamic-booking-price-target="priceHolder"><%= @bonzai.price_per_day %></span> €
-  </p>
-</div>
-
-      </div>
-      <div class="bonzai-show-card">
-        <h3>Details</h3>
-        <div class="flex">
-          <div class="flex">
-            <%= @bonzai.species %>
-          </div>
-          <div class="flex ms-3">
-            <%= @bonzai.price_per_day %>€
-          </div>
-        </div>
-      </div>
-      <div class="bonzai-show-card">
-        <div class="flex-align">
-          <h6 class="no-mb">Share</h6>
-
-          <div class="flex">
-            <i class="fa-brands fa-facebook-square me-2"></i>
-            <i class="fa-brands fa-twitter-square me-2"></i>
-            <i class="fa-brands fa-pinterest-square me-2"></i>
-          </div>
-        </div>
-      </div>
+    <div class="col-6">
+      <h5>Louez ce bonzai !</h5>
     </div>
   </div>
+</div>
+
+<div class="card-container justify-content">
+  <div class="row">
+    <div class="col-6">
+      <%= cl_image_tag @bonzai.photo.key, height: 300, width: 400, crop: :fill %>
+    </div>
+    <div class="col-6" data-controller="dynamic-booking-price"
+      data-dynamic-booking-price-price-value="<%= @bonzai.price_per_day %>">
+      <%= simple_form_for [@bonzai, @booking] do |f| %>
+        <%= f.input :start_date, as: :string,
+                  input_html: {
+                    data: {
+                      controller: "datepicker",
+                      flatpickr_target: 'startDateInput',
+                      dynamic_booking_price_target: 'startDateInput',
+                      action: 'change->dynamic-booking-price#updatePrice'
+                    }
+                  } %>
+        <%= f.input :end_date, as: :string,
+                  input_html: {
+                    data: {
+                      controller: "datepicker" ,
+                      flatpickr_target: 'endDateInput',
+                      dynamic_booking_price_target: 'endDateInput',
+                      action: 'change->dynamic-booking-price#updatePrice'
+                    }
+                  } %>
+        <%= f.input :total_price,
+        input_html: { data: { dynamic_booking_price_target: 'totalPrice'}},
+        wrapper_html: { class: 'd-none' } %>
+        <%= f.submit 'Book now!', class: 'btn-green' %>
+    <% end %>
+    <p>
+    Total price: <span data-dynamic-booking-price-target="priceHolder"><%= @bonzai.price_per_day %></span> €
+    </p>
+    </div>
+  </div>
+</div>
+
+<div class="card-container">
+  <h3>Détails</h3>
+  <p><%= @bonzai.address %></p>
+  <p><%= @bonzai.description %></p>
 </div>
