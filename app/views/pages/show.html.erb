@@ -1,27 +1,76 @@
-<h2>Bonzais owned</h2>
-<ul>
-  <% @user_bonzais.each do |bonzai| %>
-  <li><%= bonzai.name %></li>
-      <%= link_to "Edit", edit_bonzai_path(bonzai), class: "ms-3 text-warning" %>
-      <%= link_to "Remove", bonzai_path(bonzai),
-        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-        class: "ms-3 text-danger"
-      %>
-  <% end %>
-</ul>
+<h1 class="text-center my-5">Mon espace <i class="fa-sharp fa-solid fa-seedling"></i></h1>
 
-<h2>Bonzais booked</h2>
-<ul>
-  <% @user_bookings.each do |booking| %>
-  <li><%= booking.bonzai.name %> - <%= booking.status %> - <%= booking.start_date %> to <%= booking.end_date %></li>
-  <% end %>
-</ul>
+<div class="card-container d-flex justify-content-center">
 
-<h2>Manage booking requests</h2>
-<ul>
-  <% @requests.each do |r| %>
-  <li><%= r.bonzai.name %> - <%= r.status %> - <%= r.start_date %> to <%= r.end_date %></li>
-  <%= link_to "Accept", booking_accept_path(r), class: "text-success", data: { turbo_method: 'PATCH'} %>
-  <%= link_to "Decline", booking_decline_path(r), class: "text-danger", data: { turbo_method: 'PATCH'} %>
+  <div class="card-dashboard">
+    <h2 class="m-2">Mes informations</h2>
+      <div class="inner-card-dashboard">
+        <div class="img-dashboard">
+          <%= cl_image_tag current_user.photo.key, :class => "rounded-circle" %>
+       </div>
+          <div class="card-dashboard-infos">
+            <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
+               <p class="mb-10"><%= current_user.email%> </p>
+               <br>
+                  <%= link_to "Modifier mes infos", edit_user_registration_path, class: "btn-pink" %>
+          </div>
+       </div>
+</div>
+
+<div class="card-dashboard">
+  <h2 class="m-2">Mes bonzais loués</h2>
+    <% @user_bookings.each do |booking| %>
+      <div class="inner-card-dashboard">
+        <div class="img-dashboard">
+          <%= cl_image_tag booking.bonzai.photo.key, :class => "rounded-circle" %>
+       </div>
+      <div class="card-dashboard-infos">
+        <h3><%= booking.bonzai.name %></h3>
+          <p>Status: <%= booking.status %> - Réservation du <%= booking.start_date %> au <%= booking.end_date %></p>
+      </div>
+    </div>
+  </div>
   <% end %>
-</ul>
+</div>
+</div>
+
+
+<div class="card-container d-flex justify-content-center">
+  <div class="card-dashboard">
+    <h2 class="m-2">Mes bonzais proposés à la locations</h2>
+     <% @user_bonzais.each do |bonzai| %>
+       <div class="inner-card-dashboard">
+         <div class="img-dashboard">
+           <%= cl_image_tag bonzai.photo.key, :class => "rounded-circle" %>
+        </div>
+         <div class="card-dashboard-infos">
+          <h3><%= bonzai.name %></h3>
+           <p><%= bonzai.species %></p>
+             <%= link_to "Modifier", edit_bonzai_path(bonzai), class: "btn-orange" %>
+             <%= link_to "Supprimer", bonzai_path(bonzai),
+              data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+              class: "btn-red" %></p>
+         </div>
+        </div>
+        <% end %>
+         <%= link_to "+", new_bonzai_path, class: "btn-circle-pink" %>
+
+</div>
+
+<div class="card-dashboard">
+  <h2 class="m-2">Les réservations de mes bonzais</h2>
+   <% @requests.each do |r| %>
+    <div class="inner-card-dashboard">
+      <div class="img-dashboard">
+        <%= cl_image_tag r.bonzai.photo.key, :class => "rounded-circle" %>
+      </div>
+      <div class="card-dashboard-infos">
+        <h3><%= r.bonzai.name %></h3>
+         <p> <strong> <%= r.status %></strong> - Du <%= r.start_date %> au <%= r.end_date %></p>
+          <%= link_to "Accepter", booking_accept_path(r), class: "btn-green-dashboard", data: { turbo_method: 'PATCH'} %>
+          <%= link_to "Refuser", booking_decline_path(r), class: "btn-red", data: { turbo_method: 'PATCH'} %></p>
+      </div>
+      </div>
+      <% end %>
+     </div>
+</div>
