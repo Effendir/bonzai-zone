@@ -104,8 +104,8 @@ bonzai.save
 file = URI.open("https://www.bonsai-entretien.fr/wp-content/uploads/sites/5/2017/12/Rhododendron-Indicum.jpg")
 bonzai = Bonzai.new(
   user: lesly,
-  name: 'Roudoudou',
-  address: '25 avenue de Crimée',
+  name: 'Doudou',
+  address: '25 avenue de Crimée 75019 Paris',
   description: 'Ses fleurs embelliront votre intérieur',
   price_per_day: 20,
   species: 'Rhododendron'
@@ -153,7 +153,7 @@ file = URI.open("https://i.etsystatic.com/36349245/r/il/9ce49e/4490339017/il_158
 bonzai = Bonzai.new(
   user: lesly,
   name: 'Giligili',
-  address: "10 boulevard de la République 71100 Chalon sur Saone",
+  address: "10 boulevard de la République 17000 La Rochelle",
   description: "Elle déteste les chatouilles !",
   price_per_day: 21.4,
   species: 'Glycine chinoise'
