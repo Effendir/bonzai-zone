@@ -16,44 +16,22 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="bonzai-cards-container">
     <% @bonzais.each do |bonzai| %>
-      <div class="col-md-4">
-        <div class="bonzai-card">
-          <div class="flex align-items-center ms-3">
-            <div class="bonzai-card-image" style="background-image: url('<%= cl_image_path bonzai.photo.key %>')">
-            </div>
-             <span><%= bonzai.price_per_day %> per day</span>
-          </div>
+      <div class="bonzai-card">
+        <div class="bonzai-card-image" style="background-image: url('<%= cl_image_path bonzai.photo.key %>')">
+        </div>
 
-          <div class="bonzai-card-content" class="flex">
-            <div class="bonzai-card-title">
-              <h4><%= bonzai.name %></h4>
-            </div>
+        <div class="bonzai-card-content">
+          <div class="bonzai-card-title">
+            <h3><%= bonzai.name %></h3>
+            <h5><%= bonzai.species %></h5>
             <p><%= bonzai.address %></p>
-
-          <div>
-            <%= link_to "Book!", bonzai_path(bonzai), class: "btn btn-green" %>
-
-
-            <div class="flex">
-              <div class="flex align-items-center">
-                <span><%= bonzai.species %></span>
-              </div>
-              <div class="flex align-items-center ms-3">
-                <i class="fa-solid fa-euro-sign"></i>
-                <span><%= bonzai.price_per_day %> per day</span>
-              </div>
-            </div>
           </div>
-          <div class="bonzai-card-actions">
-            <%= link_to "More info", bonzai_path(bonzai) %>
-          </div>
-            <div class="flex">
-              <%# <div class="flex align-items-center"> %>
-                <%# <span><%= bonzai.species</span> %>
-              <%# </div> %>
-            </div>
+
+          <div class="bonzai-card-book">
+            <p><%= bonzai.price_per_day %>€/jour</p>
+            <%= link_to "Book!", bonzai_path(bonzai), class: "btn-green" %>
           </div>
         </div>
       </div>
