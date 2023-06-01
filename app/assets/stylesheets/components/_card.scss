@@ -22,3 +22,56 @@
   background-position: center;
   background-size: cover;
 }
+
+.inner-card-dashboard {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+}
+
+
+.card-dashboard {
+  overflow: hidden;
+  height: auto;
+  background: white;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  display: flex;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 30px;
+  width: 40%;
+  flex-direction: column;
+}
+
+
+.card-dashboard img {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  margin-left: 10px;
+
+}
+
+.card-dashboard h2 {
+  font-size: 32px;
+  margin: 0;
+  text-align: center;
+}
+
+.card-dashboard h3 {
+  font-size: 20px;
+}
+
+.card-dashboard p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-dashboard .card-dashboard-infos {
+  padding: 16px;
+}
