@@ -1,11 +1,13 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon shadow-sm p-3 mb-5 bg-white rounded">
+<div class="navbar navbar-expand-sm navbar-lewagon shadow-sm p-3 rounded">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://cdn-icons-png.flaticon.com/512/7865/7865002.png" %>
-    <% end %>
-    <% if user_signed_in? %>
-      <h1>Bonjour <%= current_user.first_name %> </h1>
-    <% end %>
+    <div class="d-flex">
+      <%= link_to "", class: "navbar-brand mr-3" do %>
+        <%= image_tag "https://cdn-icons-png.flaticon.com/512/7865/7865002.png" %>
+      <% end %>
+      <% if user_signed_in? %>
+        <h1>Bonjour <%= current_user.first_name %></h1>
+      <% end %>
+    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,9 +25,9 @@
             <%= link_to "Créer une annonce", new_bonzai_path, class: "nav-link link" %>
           </li>
           <li class="nav-item dropdown">
-          <a href="#" class="avatar py-1" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a href="#" class="d-block py-1" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <%#= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
-            <%= cl_image_tag(current_user.photo.key, width: 80, height: 80, :crop => :fill, :radius => 40, gravity: :face) %>
+            <%= cl_image_tag(current_user.photo.key, width: 50, height: 50, class: "avatar-navbar") %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Mettre à jour le profil", edit_user_registration_path, class: "dropdown-item link" %>
