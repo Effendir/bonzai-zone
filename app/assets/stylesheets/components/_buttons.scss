@@ -180,3 +180,33 @@
 .btn-submit-book {
   border: solid 1px $green;
 }
+
+.btn-pink-home {
+  color: $green;
+  padding: 4px 13px;
+  border-radius: 40px;
+  background: $pink;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-pink-home:hover {
+  color: $pink;
+  border: 1px solid $pink;
+  background: $green;
+}
+
+.btn-green-home {
+  color: $pink;
+  padding: 4px 13px;
+  border-radius: 40px;
+  background: $green;
+  transition: background 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-green-home:hover {
+  color: $green;
+  border: 1px solid $green;
+  background: $pink;
+}
