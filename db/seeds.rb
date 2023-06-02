@@ -58,8 +58,8 @@ file = URI.open("https://bergamotte.imgix.net/dqgx45g3qwobvk80x6vkl46kgj0e?ixlib
 bonzai = Bonzai.new(
   user: lesly,
   name: 'Banzai',
-  address: '10 Clifton Gardens London W9 1DT',
-  description: 'Beware! it bites',
+  address: '24 avenue de la Canebière 13001 Marseille',
+  description: 'Il pique, peuchère !',
   price_per_day: 10,
   species: 'Cactus')
 bonzai.photo.attach(io: file, filename: "banzai.png", content_type: "image/png")
@@ -82,7 +82,7 @@ bonzai = Bonzai.new(
   user: lucie,
   name: 'Cerise',
   address: '68 avenue Parmentier 75011 Paris',
-  description: 'Parfum très délicat',
+  description: 'Parfum très délicat, idéal pour embaumer votre salon !',
   price_per_day: 15,
   species: 'Cerisier'
 )
@@ -94,7 +94,7 @@ bonzai = Bonzai.new(
   user: eugene,
   name: 'Red',
   address: '41 rue de Caulaincourt 75018 Paris',
-  description: 'Donnera de la couleur à votre intérieur',
+  description: 'Il donnera de la couleur à votre intérieur.',
   price_per_day: 12.5,
   species: 'Erable'
 )
