@@ -4,34 +4,33 @@
 
   <div class="card-dashboard">
     <h2 class="m-2">Mes informations</h2>
-      <div class="inner-card-dashboard">
-        <div class="img-dashboard">
-          <%= cl_image_tag current_user.photo.key, :class => "rounded-circle" %>
-       </div>
-          <div class="card-dashboard-infos">
-            <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
-               <p class="mb-10"><%= current_user.email%> </p>
-               <br>
-                  <%= link_to "Modifier mes infos", edit_user_registration_path, class: "btn-pink" %>
-          </div>
-       </div>
-</div>
+    <div class="inner-card-dashboard">
+      <div class="img-dashboard">
+        <%= cl_image_tag current_user.photo.key, :class => "rounded-circle" %>
+      </div>
+      <div class="card-dashboard-infos">
+        <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
+        <p class="mb-10"><%= current_user.email%> </p>
+        <br>
+        <%= link_to "Modifier mes infos", edit_user_registration_path, class: "btn-pink" %>
+      </div>
+    </div>
+  </div>
 
-<div class="card-dashboard">
-  <h2 class="m-2">Mes bonzais loués</h2>
+  <div class="card-dashboard">
+    <h2 class="m-2">Mes bonzais loués</h2>
     <% @user_bookings.each do |booking| %>
       <div class="inner-card-dashboard">
         <div class="img-dashboard">
           <%= cl_image_tag booking.bonzai.photo.key, :class => "rounded-circle" %>
-       </div>
-      <div class="card-dashboard-infos">
-        <h3><%= booking.bonzai.name %></h3>
-          <p>Status: <%= booking.status %> - Réservation du <%= booking.start_date %> au <%= booking.end_date %></p>
+        </div>
+        <div class="card-dashboard-infos">
+          <h3><%= booking.bonzai.name %></h3>
+            <p>Status: <%= booking.status %> - Réservation du <%= booking.start_date %> au <%= booking.end_date %></p>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
 </div>
 
 
