@@ -21,19 +21,17 @@
         <br>
       </div>
 
-
       <div class="" data-controller="dynamic-booking-price"
         data-dynamic-booking-price-price-value="<%= @bonzai.price_per_day %>">
         <h3>Louez ce bonzai pour <%= @bonzai.price_per_day %> €/jour !</h3>
         <br>
-        <%= simple_form_for [@bonzai, @booking] do |f| %>
+        <%= simple_form_for [@bonzai, @booking], data: { controller: 'datepicker'} do |f| %>
           <%= f.input :start_date, as: :string,
                       label: 'Depuis le',
                     input_html: {
                       class: 'input-date',
                       data: {
-                        controller: "datepicker",
-                        flatpickr_target: 'startDateInput',
+                        datepicker_target: 'startDateInput',
                         dynamic_booking_price_target: 'startDateInput',
                         action: 'change->dynamic-booking-price#updatePrice'
                       }
@@ -44,9 +42,9 @@
                       label: "Jusqu'au",
                     input_html: {
                       class: 'input-date',
+                      id: 'end_time',
                       data: {
-                        controller: "datepicker" ,
-                        flatpickr_target: 'endDateInput',
+                        datepicker_target: 'endDateInput',
                         dynamic_booking_price_target: 'endDateInput',
                         action: 'change->dynamic-booking-price#updatePrice'
                       }

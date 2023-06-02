@@ -10,10 +10,6 @@ class BookingsController < ApplicationController
     @booking.status = 'En attente'
     @bonzai = Bonzai.find(params[:bonzai_id])
     @booking.bonzai = @bonzai
-    # @start_date = Booking.find(params[:start_date])
-    # @end_date = Booking.find(params[:end_date])
-    # if @end_date < @start_date
-    #   errors.add(:end_date, "must be after the start date")
     if @booking.save
       redirect_to bonzais_path
     else

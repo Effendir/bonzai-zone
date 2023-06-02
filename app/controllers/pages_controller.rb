@@ -8,7 +8,7 @@ class PagesController < ApplicationController
     @user = current_user
     @user_bonzais = Bonzai.where(user_id: @user.id)
     @user_bookings = Booking.where(user_id: @user.id)
-    @bookings = Booking.all
+    @bookings = Booking.all.order(start_date: :asc)
     @requests = @bookings.select do |booking|
       booking.bonzai.user == @user
     end
