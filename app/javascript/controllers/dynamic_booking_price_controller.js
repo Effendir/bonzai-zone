@@ -30,7 +30,7 @@ export default class extends Controller {
 
   #setPriceValue(value) {
     // Replace the text inside the priceHolder target with the value argument
-    this.priceHolderTarget.innerText = value
+    this.priceHolderTarget.innerText = value.toFixed(2)
     this.totalPriceTarget.value = value
   }
 
