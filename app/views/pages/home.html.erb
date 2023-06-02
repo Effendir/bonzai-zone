@@ -1,6 +1,7 @@
 
-<div class="banner-home d-flex mb-5 justify-content-evenly" style="background-image: url(<%= image_path "recaddrer.jpg" %>)">
-  <h3 class="text-center mb-7 align-self-center" > Bienvenue Bonzai zone, <strong> <br>site de location de bonzais</h3>
+<div class="banner-home d-flex mb-5 justify-content-evenly " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path "recaddrer.jpg" %>)">
+
+  <p class="text-center d-flex justify-items align-self-center "> Bonzai Zone <br>Location de bonzais
 </div>
 
 <div class="d-flex justify-content-evenly">
@@ -16,7 +17,7 @@
   <div class="col-md-4">
       <div class="home-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1549556172-b850cbe27974?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80)">
         <div class="home-card-btn">
-          <%= link_to "Proposez votre bonzai!", new_bonzai_path, class: "btn btn-light" %>
+          <%= link_to "Proposez votre bonzai!", bonzais_path, class: "btn btn-light" %>
         </div>
       </div>
   </div>
