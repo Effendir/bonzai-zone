@@ -1,6 +1,10 @@
-.navbar-lewagon {
+.navbar-lewagon.rest-pages {
   justify-content: space-between;
   background: $pink;
+}
+
+.navbar-lewagon.home {
+  box-shadow: none;
 }
 
 .navbar-lewagon h3 {
