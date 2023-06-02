@@ -1,5 +1,26 @@
 .rent-div {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
+.main-container-show {
+  display: flex;
+}
+
+.details-and-form-show {
+  flex-grow: 1;
+  padding: 0 60px;
+
+}
+
+.details {
+  justify-content: space-between;
+}
+
+.bonzai-photo {
+  border-radius: 15px;
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
