@@ -3,7 +3,6 @@
     <div class="col-12 0">
       <h1>Bonzai Zone</h1>
     </div>
-    <h2>Adopt a bonzai for a day or more!</h2>
   </div>
 
   <div class="row">
@@ -11,7 +10,8 @@
       <% if @query %>
         <p>You searched for <strong><%= @query %></strong>. We found <%= @bonzais.count %> bonzais out of our <%= @bonzais.count %> on our website.</p>
       <% else %>
-        <p>All <%= @bonzais.count %> bonzais.</p>
+        <h4><%= @bonzais.count %> bonzais disponibles à la location</h4>
+        <br>
       <% end %>
     </div>
   </div>
@@ -26,12 +26,13 @@
           <div class="bonzai-card-title">
             <h3><%= bonzai.name %></h3>
             <h5><%= bonzai.species %></h5>
+            <br>
             <p><%= bonzai.address %></p>
           </div>
 
           <div class="bonzai-card-book">
             <p><%= bonzai.price_per_day %>€/jour</p>
-            <%= link_to "Book!", bonzai_path(bonzai), class: "btn-green" %>
+            <%= link_to "Louer", bonzai_path(bonzai), class: "btn-green" %>
           </div>
         </div>
       </div>
