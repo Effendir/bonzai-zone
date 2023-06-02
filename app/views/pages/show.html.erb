@@ -56,20 +56,22 @@
 
 </div>
 
-<div class="card-dashboard">
-  <h2 class="m-2">Les réservations de mes bonzais</h2>
-   <% @requests.each do |r| %>
-    <div class="inner-card-dashboard">
-      <div class="img-dashboard">
-        <%= cl_image_tag r.bonzai.photo.key, :class => "rounded-circle" %>
-      </div>
-      <div class="card-dashboard-infos">
-        <h3><%= r.bonzai.name %></h3>
-         <p> <strong> <%= r.status %></strong> - Du <%= r.start_date %> au <%= r.end_date %></p>
-          <%= link_to "Accepter", booking_accept_path(r), class: "btn-green-dashboard", data: { turbo_method: 'PATCH'} %>
-          <%= link_to "Refuser", booking_decline_path(r), class: "btn-red", data: { turbo_method: 'PATCH'} %></p>
-      </div>
-      </div>
+  <div class="card-dashboard">
+    <h2 class="m-2">Les réservations de mes bonzais</h2>
+    <%= turbo_frame_tag 'validate_date' do %>
+      <% @requests.each do |r| %>
+        <div class="inner-card-dashboard">
+          <div class="img-dashboard">
+            <%= cl_image_tag r.bonzai.photo.key, :class => "rounded-circle" %>
+          </div>
+          <div class="card-dashboard-infos">
+            <h3><%= r.bonzai.name %></h3>
+            <p> <strong> <%= r.status %></strong> - Du <%= r.start_date %> au <%= r.end_date %></p>
+            <%= link_to "Accepter", booking_accept_path(r), class: "btn-green-dashboard", data: { turbo_method: 'PATCH'} %>
+            <%= link_to "Refuser", booking_decline_path(r), class: "btn-red", data: { turbo_method: 'PATCH'} %></p>
+          </div>
+        </div>
       <% end %>
-     </div>
+    <% end %>
+  </div>
 </div>
