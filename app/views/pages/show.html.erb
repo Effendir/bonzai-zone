@@ -17,26 +17,13 @@
     </div>
   </div>
 
-  <div class="card-dashboard">
-    <h2 class="m-2">Mes bonzais loués</h2>
-    <% @user_bookings.each do |booking| %>
-      <div class="inner-card-dashboard">
-        <div class="img-dashboard">
-          <%= cl_image_tag booking.bonzai.photo.key, :class => "rounded-circle" %>
-        </div>
-        <div class="card-dashboard-infos">
-          <h3><%= booking.bonzai.name %></h3>
-            <p>Status: <%= booking.status %> - Réservation du <%= booking.start_date %> au <%= booking.end_date %></p>
-        </div>
-      </div>
-    <% end %>
-  </div>
+
 </div>
 
 
 <div class="card-container d-flex justify-content-center">
   <div class="card-dashboard">
-    <h2 class="m-2">Mes bonzais proposés à la locations</h2>
+    <h2 class="m-2">Mes bonzais proposés en location</h2>
      <% @user_bonzais.each do |bonzai| %>
        <div class="inner-card-dashboard">
          <div class="img-dashboard">
@@ -54,7 +41,7 @@
         <% end %>
          <%= link_to "+", new_bonzai_path, class: "btn-circle-pink" %>
 
-</div>
+  </div>
 
   <div class="card-dashboard">
     <h2 class="m-2">Les réservations de mes bonzais</h2>
@@ -74,4 +61,20 @@
       <% end %>
     <% end %>
   </div>
+
+ <div class="card-dashboard">
+    <h2 class="m-2">Ils arrivent bientôt chez moi</h2>
+    <% @user_bookings.each do |booking| %>
+      <div class="inner-card-dashboard">
+        <div class="img-dashboard">
+          <%= cl_image_tag booking.bonzai.photo.key, :class => "rounded-circle" %>
+        </div>
+        <div class="card-dashboard-infos">
+          <h3><%= booking.bonzai.name %></h3>
+            <p>Status: <%= booking.status %> - Réservation du <%= booking.start_date %> au <%= booking.end_date %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
 </div>
