@@ -31,7 +31,7 @@
     <%= f.input :photo, as: :file %>
     <%= f.input :password,
                 label: "Mot de passe",
-                hint: "A laisser vide s'il n'y a pas de",
+                hint: "A laisser vide s'il n'y a pas de modification",
                 required: false,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation,
@@ -48,11 +48,14 @@
   <div class="form-actions d-flex justify-content-center">
     <%= f.button :submit, "Mise à jour", class: "btn btn-dark-green-form" %>
   </div>
+
+  <div class="form-actions d-flex justify-content-center">
+    <%= link_to "Retour", :back, class:"btn btn-dark-green-form my-2" %>
+  </div>
 <% end %>
 
 
 <div>
-<%= button_to "Suppression du compte", registration_path(resource_name), class: "btn btn-outline-danger btn-sm", data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
+<%= button_to "Suppression du compte", registration_path(resource_name), class: "btn btn-red", data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
 
-<%= link_to "Retour", :back, class:"form-links" %>
 </div>
